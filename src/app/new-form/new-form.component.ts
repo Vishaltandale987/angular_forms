@@ -12,9 +12,22 @@ export class NewFormComponent {
     name:new FormControl("",[Validators.required, Validators.minLength(2) ]),
     email:new FormControl("",[Validators.required,Validators.email]),
     password:new FormControl("",[Validators.required,  Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
+    // confirmation_password: new FormControl("", [Validators.required]),
     mobile_no:new FormControl("",[Validators.required, Validators.pattern('^[0-9]{10}$')]),
     date_time :new FormControl("",[Validators.required]),
   })
+
+  // static passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
+  //   const password = control.get('password')?.value;
+  //   const confirmPassword = control.get('confirmation_password')?.value;
+    
+  //   if (password !== confirmPassword) {
+  //     return { passwordMismatch: true };
+  //   }
+    
+  //   return null;
+  // }
+
 
   handle_form(){
     console.log(this.validation_form.value)
