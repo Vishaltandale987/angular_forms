@@ -40,4 +40,8 @@ export class NewFormComponent {
   get valid_mobile_no(){
     return this.validation_form.get("mobile_no")
   }
+
+  get valid_date_time(){
+    return this.validation_form.get("date_time")
+  }
 }

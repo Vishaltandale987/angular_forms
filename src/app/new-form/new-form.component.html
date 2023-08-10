@@ -16,9 +16,10 @@
         <span *ngIf="valid_password && valid_password.invalid && valid_password.touched" class="error_span">At least 8 characters long but 30 or more is better. A combination of uppercase letters, lowercase letters, numbers, and symbols.</span>
 
         <input type="number" placeholder="Enter mobile no" formControlName="mobile_no" class="form-control" />
-        <span *ngIf="valid_mobile_no && valid_mobile_no.invalid && valid_mobile_no.touched" class="error_span">this filed is not valid</span>
+        <span *ngIf="valid_mobile_no && valid_mobile_no.invalid && valid_mobile_no.touched" class="error_span">*mobile no must be 10 digits</span>
 
         <input type="datetime-local" placeholder="Enter task" formControlName="date_time" class="form-control" />
+        <span *ngIf="valid_date_time && valid_date_time.invalid && valid_date_time.touched" class="error_span">*this filed is not valid</span>
 
 
         <button class="btn btn-outline-success" [disabled]="validation_form.invalid" >Submit</button>
