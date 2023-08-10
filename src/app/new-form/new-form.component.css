@@ -16,3 +16,9 @@
     flex-direction: column;
     gap: 1em;
 }
+
+.error_span{
+    color: red;
+    text-align: left;
+    margin-left: 10px;
+}
