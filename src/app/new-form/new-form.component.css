@@ -1,0 +1,18 @@
+.parent{
+   margin: auto;
+   padding-top: 2em;
+
+}
+
+#form{
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1em;
+    border: 2px solid rgb(113, 162, 227);
+    margin: auto;
+    border-radius: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

@@ -1,0 +1,74 @@
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    gap: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1em;
+    border: 2px solid rgb(113, 162, 227);
+    border-radius: 10px;
+    margin-top: 2em;
+}
+
+#parent{
+    margin: auto;
+    text-align: center;
+    margin-top: 2em;
+
+
+}
+
+#block{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: left;
+    padding: 1em;
+    border: 2px solid rgb(113, 162, 227);
+    border-radius: 10px;
+    margin-top: 1em;
+
+
+}
+.box{
+    margin-top: 2em;
+}
+
+#black_parent{
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    gap: 1em;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+
+}
+
+.text_heading{
+    font-weight: bold;
+}
+
+.button{
+
+    display: flex;
+    gap: 1em;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#pagination{
+    
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.pagination_child{
+
+width: auto;
+margin: auto;
+padding: 2em;
+}
