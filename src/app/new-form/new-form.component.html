@@ -4,14 +4,13 @@
     <form #newform="ngForm" id="form" (ngSubmit)="submit_new_Form(newform.value)">
         <h1>Form</h1>
 
-        <input type="text" placeholder="Enter task" name="task" class="form-control" id="floatingInput" ngModel />
-        <input type="text" placeholder="Enter description" name="description" class="form-control" id="floatingInput"
-            ngModel />
-        <input type="range" placeholder="Enter task" name="range" class="form-control" id="floatingInput" ngModel />
+        <input type="text" placeholder="Enter name" name="name" class="form-control" id="floatingInput" ngModel />
         <input type="email" placeholder="Enter email" name="email" class="form-control" id="floatingInput" ngModel />
         <input type="password" placeholder="Enter password" name="password" class="form-control" id="floatingInput" ngModel />
+        <input type="number" placeholder="Enter mobile no" name="description" class="form-control" id="floatingInput"
+            ngModel />
         <input type="datetime-local" placeholder="Enter task" name="date_time" class="form-control" id="floatingInput" ngModel />
-        <input type="color" placeholder="Enter task" name="color" class="form-control" id="floatingInput" ngModel />
+        <!-- <input type="color" placeholder="Enter task" name="color" class="form-control" id="floatingInput" ngModel /> -->
 
 
         <button class="btn btn-outline-success">Submit</button>

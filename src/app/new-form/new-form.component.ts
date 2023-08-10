@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class NewFormComponent {
 
   submit_new_Form(item: any){
-console.log(item)
+    console.log(item.range)
   }
 }
