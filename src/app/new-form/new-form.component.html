@@ -1,24 +1,30 @@
-<!-- <form #form="ngForm" id="form" (ngSubmit)="submitForm(form.value)"> -->
 <div class="parent">
 
 
 
     <form [formGroup]="validation_form" id="form" (ngSubmit)="handle_form()">
         <h1>Form</h1>
-
+        <label class="label">Name</label>
         <input type="text" placeholder="Enter name" formControlName="name" class="form-control" />
         <span *ngIf="valid_name && valid_name.invalid && valid_name.touched" class="error_span">*this is not valid</span>
 
+        <label class="label">Email</label>
         <input type="email" placeholder="Enter email" formControlName="email" class="form-control" />
         <span *ngIf="valid_email && valid_email.invalid && valid_email.touched" class="error_span">*this email is not valid</span>
 
+        <label class="label">Password</label>
         <input type="password" placeholder="Enter password" formControlName="password" class="form-control" />
         <span *ngIf="valid_password && valid_password.invalid && valid_password.touched" class="error_span">*At least 8 characters long but 30 or more is better. A combination of uppercase letters, lowercase letters, numbers, and symbols.</span>
 
+        <label class="label">Confirm Password</label>
+        <input type="password" placeholder="Enter confirm password" formControlName="confirmation_password" class="form-control" />
+        <span *ngIf="validation_form.errors?.['password_valid_error'] && valid_confirmation_password?.touched" class="error_span">*password mismatch</span>
         
+        <label class="label">Mobile no</label>
         <input type="number" placeholder="Enter mobile no" formControlName="mobile_no" class="form-control" />
         <span *ngIf="valid_mobile_no && valid_mobile_no.invalid && valid_mobile_no.touched" class="error_span">*mobile no must be 10 digits</span>
 
+        <label class="label">Date</label>
         <input type="datetime-local" placeholder="Enter task" formControlName="date_time" class="form-control" />
         <span *ngIf="valid_date_time && valid_date_time.invalid && valid_date_time.touched" class="error_span">*this filed is not valid</span>
 
@@ -26,3 +32,4 @@
         <button class="btn btn-outline-success" [disabled]="validation_form.invalid" >Submit</button>
     </form>
 </div>
+
