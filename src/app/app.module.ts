@@ -9,6 +9,8 @@ import {HttpClientModule} from "@angular/common/http"
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NewFormComponent } from './new-form/new-form.component';
+import { LeaveFormComponent } from './leave-app/leave-form/leave-form.component';
+import { AddminPanelComponent } from './leave-app/addmin-panel/addmin-panel.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NewFormComponent } from './new-form/new-form.component';
     FormComponent,
     NavbarComponent,
     NewFormComponent,
+    LeaveFormComponent,
+    AddminPanelComponent,
     
   ],
   imports: [

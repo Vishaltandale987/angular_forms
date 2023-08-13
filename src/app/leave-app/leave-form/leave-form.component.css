@@ -1,0 +1,70 @@
+#add_details_parent {
+    width: 30%;
+    margin: 5em auto auto auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid rgb(113, 162, 227);
+    border-radius: 1em;
+
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+}
+
+#form button {
+    width: 5em;
+    margin: auto;
+}
+
+.error_span {
+    text-align: left;
+    margin: -0.5em auto auto .5em;
+    color: red;
+
+}
+
+#gridbox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+    width: 70%;
+    margin: 3em auto auto auto;
+    border: 2px solid rgb(113, 162, 227);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2em;
+    margin-bottom: 3em;
+}
+
+
+#render_arr {
+    text-align: center;
+    margin-top: 3em;
+}
+
+#render_box {
+    width: 15em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid rgb(113, 162, 227);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em auto auto auto;
+
+
+
+}
+
+.status {
+    font-weight: bold;
+}
+
+.leave_status {
+    font-weight: bold;
+    border: 2px solid rgb(113, 162, 227);
+    padding: .4em;
+    border-radius: 5px;
+    color: brown;
+}

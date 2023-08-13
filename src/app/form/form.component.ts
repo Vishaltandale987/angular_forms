@@ -14,7 +14,6 @@ export class FormComponent {
   
   addTaskValue: string = '';
   selectedValue: any;
-  // done=this.taskArr.filter((e) => e.important === "DONE")
   constructor(private crudService: CrudService) {}
 
 

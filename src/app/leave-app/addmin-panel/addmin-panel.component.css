@@ -1,0 +1,23 @@
+#table{
+    width: 98%;
+    margin: 2em auto auto auto;
+
+}
+
+#table h3{
+    text-align: center;
+    padding: 1em;
+}
+
+.status{
+color: blue;
+border-bottom: 1px solid blue;
+}
+
+.buttons{
+    display: flex;
+justify-content: space-between;
+width: 80%;
+margin: auto;
+
+}

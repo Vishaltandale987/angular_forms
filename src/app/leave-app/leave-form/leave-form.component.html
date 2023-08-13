@@ -1,0 +1,54 @@
+<div id="add_details_box">
+  <div id="add_details_parent">
+    <form id="form" [formGroup]="leave_validation_form" (ngSubmit)="leave_submit_Form()">
+
+      <h3>Leave Appliction Form</h3>
+      <input type="text" placeholder="Enter employee name" formControlName="employee_name" class="form-control" id="floatingInput" />
+        <span *ngIf="valid_employee_name && valid_employee_name.invalid && valid_employee_name.touched" class="error_span">*this is not valid</span>
+
+      <input type="number" placeholder="Enter employee id" formControlName="employee_id" class="form-control" id="floatingInput" />
+      <span *ngIf="valid_employee_id && valid_employee_id.invalid && valid_employee_id.touched" class="error_span">*this is not valid</span>
+
+      <input type="date" placeholder="Enter description" formControlName="start_date" class="form-control" id="floatingInput" />
+      <span *ngIf="valid_start_date && valid_start_date.invalid && valid_start_date.touched" class="error_span">*this is not valid</span>
+
+      <input type="date" placeholder="Enter description" formControlName="end_date" class="form-control" id="floatingInput" />
+      <span *ngIf="valid_end_date && valid_end_date.invalid && valid_end_date.touched" class="error_span">*this is not valid</span>
+
+      <input type="text" placeholder="Enter reason" formControlName="leave_reason" class="form-control" id="floatingInput" />
+      <span *ngIf="valid_leave_reason && valid_leave_reason.invalid && valid_leave_reason.touched" class="error_span">*this is not valid</span>
+
+      <button class="btn btn-outline-success" [disabled]="leave_validation_form.invalid">Submit</button>
+    </form>
+  </div>
+
+</div>
+
+<div id="render_arr">
+  <h1>leave application status</h1>
+
+  <div id="gridbox">
+
+    
+    <div *ngFor="let item of leave_Arr; let i = index" id="render_box">
+      
+      <P>Employee Name - <span  class="status" > {{item.employee_name}} </span></P>
+      <P>Employee Id - <span class="status" > {{item.employee_id}} </span></P>
+      <P>Leave Status - <span class="leave_status" > {{item.leave_status}} </span></P>
+      
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

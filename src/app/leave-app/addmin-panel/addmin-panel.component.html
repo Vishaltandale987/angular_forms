@@ -1,0 +1,51 @@
+<div id="table">
+    <h3>Leave Appliction</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Leave Reason</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of leave_Arr; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ item.employee_name }}</td>
+                <td>{{ item.employee_id }}</td>
+                <td>{{ item.start_date }}</td>
+                <td>{{ item.end_date }}</td>
+                <td>{{ item.leave_reason }}</td>
+                <td data-bs-toggle="modal" (click)="set_id(i)" data-bs-target="#exampleModal"><span class="status"> {{
+                        item.leave_status }} </span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Change Leave Status</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" >
+                <div class="buttons">
+
+                    <button type="button" class="btn btn-success" (click)="handle_approve()" data-bs-dismiss="modal">Approve</button>
+                    <button type="button" class="btn btn-danger" (click)="handle_reject()" data-bs-dismiss="modal">Reject</button>
+                    <button type="button" class="btn btn-warning" (click)="handle_pending()" data-bs-dismiss="modal">Pending</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
