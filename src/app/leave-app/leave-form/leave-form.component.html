@@ -37,6 +37,11 @@
       <P>Leave Status - <span class="leave_status" > {{item.leave_status}} </span></P>
       
     </div>
+    
+    <div class="aleart">
+
+      <h5 *ngIf="leave_Arr.length === 0" >*leave application not found. Please fill above form.</h5>
+    </div>
   </div>
 
 
