@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { leave } from 'src/app/model/leave';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-leave-form',
@@ -13,6 +14,10 @@ export class LeaveFormComponent {
   leave_Arr: leave[] = [];
 
   leave_index :any
+
+
+
+ 
 
   ngOnInit(): void {
     const storedData = sessionStorage.getItem('key'); 
@@ -51,7 +56,7 @@ export class LeaveFormComponent {
       start_date:new FormControl(""), 
       end_date: new FormControl(""),
       leave_reason:new FormControl(""),
-      leave_status:new FormControl("pending",[Validators.required, Validators.minLength(3) ]),
+      leave_status:new FormControl("PENDING",[Validators.required, Validators.minLength(3) ]),
     })
     
 
@@ -96,26 +101,7 @@ export class LeaveFormComponent {
     
   }
 
-  handle_approve(){
-    const storedData = sessionStorage.getItem('key');
-
-    
-  
-    if (storedData) {
-      const data = JSON.parse(storedData);
-  
-      const objIndex = data.findIndex((e: any) => e.index === this.leave_index);
-
-    
-      data[this.leave_index].leave_status = 'fuck'
-      console.log(data)
-      sessionStorage.setItem('key', JSON.stringify(data));
-      this.ngOnInit()
-      
-      alert("Status has been successfully updated")
-     
-    }
-  }
+ 
 
 
 }
