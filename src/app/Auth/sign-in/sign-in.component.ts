@@ -44,7 +44,7 @@ export class SignInComponent {
             sessionStorage.setItem('auth', JSON.stringify(existingData));
 
             this.router.navigate(['']);
-            break; // Exit the loop since we found a match
+            break; 
           } else if (signupDataArray[i].email !== signin_data.email) {
             alert('Wrong Email');
 

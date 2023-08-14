@@ -8,7 +8,7 @@
         <button type="button" routerLink="admin-panel" class="btn btn-link btn-lg">Addmin Panel</button>
     </div>
     <div>
-    <button type="button" routerLink="sign-in" class="btn btn-link btn-lg">Sign-In</button>
+    <button type="button" *ngIf="!auth()"  routerLink="sign-in" class="btn btn-link btn-lg">Sign-In</button>
     <button type="button" routerLink="sign-up" class="btn btn-link btn-lg">Sign-Up</button>
     <button type="button" *ngIf="auth()" (click)="handle_logout()" class="btn btn-link btn-lg">Logout</button>
 
