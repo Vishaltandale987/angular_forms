@@ -1,0 +1,62 @@
+<div class="parent">
+
+
+
+    <form [formGroup]="signup_validation_form" id="form" (ngSubmit)="submit_handle_signup_form()">
+        <h2>Sign-Up Form</h2>
+
+        <div id="name_box">
+
+            <div class="input_box">
+
+                <label class="label">First Name</label>
+                <input type="text" placeholder="Enter first name" formControlName="frist_name" class="form-control" />
+                <span *ngIf="valid_frist_name && valid_frist_name.invalid && valid_frist_name.touched"
+                    class="error_span">*this is not valid</span>
+            </div>
+
+            <div class="input_box">
+
+                <label class="label">Last Name</label>
+                <input type="text" placeholder="Enter last name" formControlName="last_name" class="form-control" />
+                <span *ngIf="valid_last_name && valid_last_name.invalid && valid_last_name.touched"
+                    class="error_span">*this is not valid</span>
+            </div>
+        </div>
+
+
+
+
+        <div class="input_box">
+
+            <label class="label">Email</label>
+            <input type="email" placeholder="Enter email" formControlName="email" class="form-control" />
+            <span *ngIf="valid_email && valid_email.invalid && valid_email.touched" class="error_span">*this email is
+                not valid</span>
+        </div>
+
+        <div class="input_box">
+
+            <label class="label">Password</label>
+            <input type="password" placeholder="Enter password" formControlName="password" class="form-control" />
+            <span *ngIf="valid_password && valid_password.invalid && valid_password.touched" class="error_span">*At
+                least 8 characters long but 30 or more is better. A combination of uppercase letters, lowercase letters,
+                numbers, and symbols.</span>
+        </div>
+
+        <div class="input_box">
+
+            <label class="label">Confirm Password</label>
+            <input type="password" placeholder="Enter confirm password" formControlName="confirmation_password"
+                class="form-control" />
+            <span
+                *ngIf="signup_validation_form.errors?.['password_valid_error'] && valid_confirmation_password?.touched"
+                class="error_span">*password mismatch</span>
+        </div>
+
+
+
+
+        <button class="btn btn-outline-success" [disabled]="signup_validation_form.invalid">Submit</button>
+    </form>
+</div>

@@ -11,6 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NewFormComponent } from './new-form/new-form.component';
 import { LeaveFormComponent } from './leave-app/leave-form/leave-form.component';
 import { AddminPanelComponent } from './leave-app/addmin-panel/addmin-panel.component';
+import { SignInComponent } from './Auth/sign-in/sign-in.component';
+import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AddminPanelComponent } from './leave-app/addmin-panel/addmin-panel.comp
     NewFormComponent,
     LeaveFormComponent,
     AddminPanelComponent,
+    SignInComponent,
+    SignUpComponent,
     
   ],
   imports: [

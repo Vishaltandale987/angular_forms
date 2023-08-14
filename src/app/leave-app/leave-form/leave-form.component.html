@@ -31,7 +31,7 @@
 
     
     <div *ngFor="let item of leave_Arr; let i = index" id="render_box">
-      
+      <P>Application Id - <span  class="status" > {{i+1}} </span></P>
       <P>Employee Name - <span  class="status" > {{item.employee_name}} </span></P>
       <P>Employee Id - <span class="status" > {{item.employee_id}} </span></P>
       <P>Leave Status - <span class="leave_status" > {{item.leave_status}} </span></P>

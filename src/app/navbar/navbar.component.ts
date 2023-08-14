@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  auth(){
+    let auth = sessionStorage.getItem("auth");
+    
+    if(auth === null){
+      return false
+    }else{
+      return true
+    }
+  }
+
+
+  handle_logout(){
+    sessionStorage.removeItem("auth")
+
+    console.log(this.auth())
+  }
 }
