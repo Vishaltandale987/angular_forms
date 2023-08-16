@@ -1,17 +1,43 @@
-<div id="navbar">
+<!-- <div id="navbar">
 
-    <div>
+    <div class="box">
 
-        <button type="button" routerLink="todo" class="btn btn-link btn-lg">Todo App</button>
-        <button type="button" routerLink="form" class="btn btn-link btn-lg">Form Validation</button>
-        <button type="button" routerLink="leave-form" class="btn btn-link btn-lg">Leave Form</button>
-        <button type="button" routerLink="admin-panel" class="btn btn-link btn-lg">Addmin Panel</button>
+        <button type="button" routerLinkActive="active" routerLink="home" class="btn btn-link btn-lg">Todo App</button>
+        <button type="button" routerLinkActive="active" routerLink="form" class="btn btn-link btn-lg">Form Validation</button>
+        <button type="button" routerLinkActive="active" routerLink="leave-form" class="btn btn-link btn-lg">Leave Form</button>
+        <button type="button" routerLinkActive="active" routerLink="admin-panel" class="btn btn-link btn-lg">Addmin Panel</button>
     </div>
     
-    <div>
-    <button type="button" *ngIf="!auth()"  routerLink="sign-in" class="btn btn-link btn-lg">Sign-In</button>
-    <button type="button" routerLink="sign-up" class="btn btn-link btn-lg">Sign-Up</button>
-    <button type="button" *ngIf="auth()" (click)="handle_logout()" class="btn btn-link btn-lg">Logout</button>
+    <div class="box">
+    <button type="button" routerLinkActive="active" *ngIf="!auth()"  routerLink="sign-in" class="btn btn-link btn-lg">Sign-In</button>
+    <button type="button" routerLinkActive="active" routerLink="sign-up" class="btn btn-link btn-lg">Sign-Up</button>
+    <button type="button" routerLinkActive="active" *ngIf="auth()" (click)="handle_logout()" class="btn btn-link btn-lg">Logout</button>
 
     </div>
-</div>
+</div> -->
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="home">Navbar</a>
+      
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" id="navbar">
+            <div>
+
+                <a routerLinkActive="inactive" class="nav-link" aria-current="page" routerLink="home">Home</a>
+                <a routerLinkActive="inactive" class="nav-link" routerLink="form">Form</a>
+                <a routerLinkActive="inactive" class="nav-link" routerLink="leave-form">Leave</a>
+                <a routerLinkActive="inactive" class="nav-link" routerLink="admin-panel">Leave Admin</a>
+            </div>
+
+            <div>
+
+                <a routerLinkActive="inactive" class="nav-link" *ngIf="!auth()" routerLink="sign-in">SignIn</a>
+          <a routerLinkActive="inactive" class="nav-link" routerLink="sign-up" >SignUp</a>
+          <a  class="nav-link" *ngIf="auth()" (click)="handle_logout()" href="#">Logout</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </nav>

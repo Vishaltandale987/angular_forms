@@ -13,6 +13,7 @@ import { LeaveFormComponent } from './leave-app/leave-form/leave-form.component'
 import { AddminPanelComponent } from './leave-app/addmin-panel/addmin-panel.component';
 import { SignInComponent } from './Auth/sign-in/sign-in.component';
 import { SignUpComponent } from './Auth/sign-up/sign-up.component';
+import { NotfoundComponent } from './navbar/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SignUpComponent } from './Auth/sign-up/sign-up.component';
     AddminPanelComponent,
     SignInComponent,
     SignUpComponent,
+    NotfoundComponent,
     
   ],
   imports: [
