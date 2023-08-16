@@ -42,6 +42,7 @@ export class SignInComponent {
             alert('Successfully Signin');
             const existingData = true;
             sessionStorage.setItem('auth', JSON.stringify(existingData));
+            sessionStorage.setItem('user_name', JSON.stringify(signupDataArray[i].frist_name));
 
             this.router.navigate(['']);
             break; 

@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  
+  user_name: string = "";
+
+  ngOnInit(): void {
+    const storedData = sessionStorage.getItem('user_name'); 
+    if (storedData) {
+      this.user_name = JSON.parse(storedData);
+    }
+  }
+
   auth(){
     let auth = sessionStorage.getItem("auth");
     

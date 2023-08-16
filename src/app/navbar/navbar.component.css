@@ -3,12 +3,16 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
+    /* border: 1px solid red; */
   
 }
 
 #navbar div {
     display: flex;
+    /* border: 1px solid black; */
+    align-items: center;
+    width: auto;
+
 }
 
 
@@ -21,4 +25,5 @@
 
 .inactive{
     color: blue;
+    font-weight: bold;
 }
