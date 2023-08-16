@@ -2,7 +2,7 @@
   <div id="add_details_parent">
     <form id="form" [formGroup]="leave_validation_form" (ngSubmit)="leave_submit_Form()">
 
-      <h3>Leave Appliction Form</h3>
+      <h3>Leave Application Form</h3>
       <input type="text" placeholder="Enter employee name" formControlName="employee_name" class="form-control" id="floatingInput" />
         <span *ngIf="valid_employee_name && valid_employee_name.invalid && valid_employee_name.touched" class="error_span">*this is not valid</span>
 

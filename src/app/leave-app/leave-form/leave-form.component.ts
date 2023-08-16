@@ -60,7 +60,7 @@ export class LeaveFormComponent {
     })
     
 
-    alert("Leave appliction has been successfully submited.")
+    alert("Leave application has been successfully submited.")
 
   }
 
