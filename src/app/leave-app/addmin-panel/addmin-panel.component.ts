@@ -19,6 +19,7 @@ export class AddminPanelComponent {
     }
   }
 
+ 
 
 
   set_id(id:any){

@@ -8,15 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav" id="navbar">
         <div>
+          
 
           <a routerLinkActive="inactive" class="nav-link" aria-current="page" routerLink="home">Home</a>
+          <a routerLinkActive="inactive" class="nav-link" routerLink="todo">Todo</a>
           <a routerLinkActive="inactive" class="nav-link" routerLink="form">Form</a>
           <a routerLinkActive="inactive" class="nav-link" routerLink="leave-form">Leave</a>
           <a routerLinkActive="inactive" class="nav-link" routerLink="admin-panel">Leave Admin</a>
         </div>
 
         <div>
-          <p class="nav-link mt-3" *ngIf="auth()">User Name - <span class="inactive">  {{user_name}} </span></p>
+          <p  class="user" *ngIf="auth()">User Name - <span>  {{user_name}} </span></p>
           <a routerLinkActive="inactive" class="nav-link" *ngIf="!auth()" routerLink="sign-in">SignIn</a>
           <a routerLinkActive="inactive" class="nav-link" routerLink="sign-up">SignUp</a>
           <a class="nav-link" *ngIf="auth()" (click)="handle_logout()" href="#">Logout</a>

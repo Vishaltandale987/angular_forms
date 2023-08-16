@@ -8,12 +8,14 @@ import { AddminPanelComponent } from './leave-app/addmin-panel/addmin-panel.comp
 import { SignInComponent } from './Auth/sign-in/sign-in.component';
 import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 import { NotfoundComponent } from './navbar/notfound/notfound.component';
+import { TodoComponent } from './form/todo/todo.component';
 
 const routes: Routes = [
   { path: '', redirectTo:"/home", pathMatch:"full" },
   { path: 'home',  component: FormComponent },
   { path: 'admin-panel', canActivate:[authGuard], component: AddminPanelComponent },
   { path: 'leave-form', canActivate:[authGuard], component: LeaveFormComponent },
+  { path: 'todo', canActivate:[authGuard], component: TodoComponent },
   
   { path: 'form', canActivate:[authGuard], component: NewFormComponent },
   { path: 'sign-in',  component: SignInComponent },

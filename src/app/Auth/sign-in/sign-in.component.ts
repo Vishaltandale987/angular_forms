@@ -12,11 +12,9 @@ export class SignInComponent {
 
   signin_validation_form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(2),
-    ]),
+    password: new FormControl('', [Validators.required,Validators.minLength(2),]),
   });
+  
 
   submit_handle_signin_form() {
     let auth = false;

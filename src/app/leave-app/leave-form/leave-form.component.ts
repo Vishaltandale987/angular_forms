@@ -16,7 +16,6 @@ export class LeaveFormComponent {
   leave_index :any
 
 
-
  
 
   ngOnInit(): void {
@@ -24,6 +23,7 @@ export class LeaveFormComponent {
     if (storedData) {
       this.leave_Arr = JSON.parse(storedData);
     }
+
   }
  
   leave_validation_form = new FormGroup({
@@ -32,13 +32,32 @@ export class LeaveFormComponent {
     start_date:new FormControl("",[Validators.required, Validators.minLength(3) ]), 
     end_date: new FormControl("",[Validators.required, Validators.minLength(3) ]),
     leave_reason:new FormControl("",[Validators.required, Validators.minLength(3) ]),
-    leave_status:new FormControl("pending",[Validators.required, Validators.minLength(3) ]),
+    leave_status:new FormControl("PENDING",[Validators.required, Validators.minLength(3) ]),
+    days_difference:new FormControl("")
   })
 
 
   leave_submit_Form() {  
 
-    let leave_data_object = this.leave_validation_form.value
+    let leave_data_object = this.leave_validation_form.value;
+
+    const startDateStr = leave_data_object.start_date;
+    const endDateStr = leave_data_object.end_date;
+  
+    if (startDateStr && endDateStr) {
+      const startDate: Date = new Date(startDateStr);
+      const endDate: Date = new Date(endDateStr);
+    
+      if (!isNaN(startDate.getTime()) && !isNaN(endDate.getTime())) {
+        const daysDifference: number = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+        leave_data_object.days_difference = daysDifference.toString();
+      } else {
+        console.error("Invalid date format");
+      }
+    } else {
+      console.error("Start date or end date is missing");
+    }
+  
 
     let storedData = sessionStorage.getItem("key");
 
@@ -57,6 +76,8 @@ export class LeaveFormComponent {
       end_date: new FormControl(""),
       leave_reason:new FormControl(""),
       leave_status:new FormControl("PENDING",[Validators.required, Validators.minLength(3) ]),
+    days_difference:new FormControl("")
+
     })
     
 

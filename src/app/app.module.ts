@@ -14,6 +14,7 @@ import { AddminPanelComponent } from './leave-app/addmin-panel/addmin-panel.comp
 import { SignInComponent } from './Auth/sign-in/sign-in.component';
 import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 import { NotfoundComponent } from './navbar/notfound/notfound.component';
+import { TodoComponent } from './form/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NotfoundComponent } from './navbar/notfound/notfound.component';
     SignInComponent,
     SignUpComponent,
     NotfoundComponent,
+    TodoComponent,
     
   ],
   imports: [

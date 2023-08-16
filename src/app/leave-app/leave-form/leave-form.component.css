@@ -75,3 +75,33 @@
 .aleart{
     color: brown;
 }
+
+.label{
+    text-align: left;
+    margin: auto auto -1em .5em ;
+
+}
+
+.REJECT{
+    font-weight: bold;
+    border: 2px solid rgb(187,0,0);
+    padding: .4em;
+    border-radius: 5px;
+    color: rgb(187, 0, 0);
+}
+
+.PENDING{
+    font-weight: bold;
+    border: 2px solid rgb(255, 166, 0);
+    padding: .4em;
+    border-radius: 5px;
+    color: rgb(255, 166, 0);
+}
+
+.APPROVE{
+    font-weight: bold;
+    border: 2px solid #2cff02;
+    padding: .4em;
+    border-radius: 5px;
+    color: #188e00;
+}

@@ -4,7 +4,8 @@ export class leave {
     start_date:string = "";
     end_date:string = "";
     leave_reason:string="";
-    leave_status:string="pending";
+    leave_status:string="PENDING";
+    days_difference:Number = 0;
    
 }
 

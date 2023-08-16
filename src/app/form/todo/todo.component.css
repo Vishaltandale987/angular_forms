@@ -1,4 +1,4 @@
-#form{
+#form {
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -11,7 +11,7 @@
     margin-top: 2em;
 }
 
-#parent{
+#parent {
     margin: auto;
     text-align: center;
     margin-top: 2em;
@@ -19,7 +19,7 @@
 
 }
 
-#block{
+#block {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     text-align: left;
     padding: 1em;
@@ -29,13 +29,14 @@
 
 
 }
-.box{
+
+.box {
     margin-top: 2em;
 }
 
-#black_parent{
+#black_parent {
     display: grid;
-    grid-template-columns: repeat( 3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1em;
     margin: auto;
     text-align: center;
@@ -43,66 +44,99 @@
 
 }
 
-.text_heading{
+.text_heading {
     font-weight: bold;
 }
 
-.button{
+.button {
 
     display: flex;
     gap: 1em;
 }
 
-.modal-body{
+.modal-body {
     display: flex;
     flex-direction: column;
     gap: 2em;
 }
 
-#pagination{
-    
+#pagination {
+
     text-align: center;
     align-items: center;
     margin: auto;
-    
-}
-.pagination_child{
 
-width: auto;
-margin: auto;
-padding: 2em;
 }
 
+.pagination_child {
+
+    width: auto;
+    margin: auto;
+    padding: 2em;
+}
 
 
-#rendering_box{
+
+#rendering_box {
     width: 100%;
     display: flex;
     gap: 1em;
     padding-bottom: 2em;
 
-    border: 1px solid red;
-
 }
 
-.card{
+
+#rendering_box>div:nth-child(1) {
+    background-color: rgb(249, 237, 218)
+}
+
+#rendering_box>div:nth-child(2) {
+    background-color: rgb(235, 253, 253)
+}
+
+#rendering_box>div:nth-child(3) {
+    background-color: rgb(247, 206, 206)
+}
+
+#rendering_box>div:nth-child(4) {
+    background-color: rgb(234, 249, 218)
+}
+
+.card {
     border: 2px solid rgb(113, 162, 227);
-    
-    
     margin: auto;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
-
     text-align: left;
+    width: 90%;
+    padding: 1em;
 }
 
 
-.parents{
+.parents {
     border: 2px solid rgb(113, 162, 227);
-    margin: 1px auto auto 1px;
     width: 22%;
+    border-radius: 10px;
+    margin: auto;
     text-align: center;
+    margin-top: 1px;
+    padding-bottom: 2em;
+}
+
+.parents h5 {
+margin-top: 1em
+}
+
+.deletes{
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2em;
+    justify-content: flex-end;
+}
+
+h1{
+    text-align: center;
+    padding: .5em;
 }

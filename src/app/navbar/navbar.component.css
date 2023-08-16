@@ -27,3 +27,11 @@
     color: blue;
     font-weight: bold;
 }
+
+.user{
+
+    color: rgb(188, 109, 231);
+    font-weight: bold;
+    padding-top: 1em;
+    margin-right: 2em;
+}

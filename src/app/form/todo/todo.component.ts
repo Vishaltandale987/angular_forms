@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { CrudService } from '../service/crud.service';
-import { Task } from '../model/task';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Task } from 'src/app/model/task';
+import { CrudService } from 'src/app/service/crud.service';
+
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.css']
 })
-export class FormComponent {
-  
+export class TodoComponent {
+
+
   taskobj: Task = new Task();
   p: number = 1;
   taskArr: Task[] = [];
