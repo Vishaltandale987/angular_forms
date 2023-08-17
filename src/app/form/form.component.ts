@@ -59,6 +59,8 @@ export class FormComponent {
       (res) => {
         this.ngOnInit();
         alert(res);
+        this.selectedValue = ""
+        // this.ngOnInit();
       },
       (err) => {
         alert('Error');
@@ -92,6 +94,8 @@ export class FormComponent {
         });
 
         alert(res);
+     
+
       },
       (err) => {
         alert('edit error');

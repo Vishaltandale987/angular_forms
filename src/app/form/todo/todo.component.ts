@@ -69,6 +69,8 @@ export class TodoComponent {
       (res) => {
         this.ngOnInit();
         alert(res);
+        this.selectedValue = ""
+
       },
       (err) => {
         alert('Error');
