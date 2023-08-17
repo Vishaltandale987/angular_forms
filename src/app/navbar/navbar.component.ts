@@ -15,6 +15,7 @@ export class NavbarComponent {
     if (storedData) {
       this.user_name = JSON.parse(storedData);
     }
+    
   }
 
   auth(){
@@ -24,6 +25,7 @@ export class NavbarComponent {
       return false
     }else{
       return true
+      this.ngOnInit()
     }
   }
 
