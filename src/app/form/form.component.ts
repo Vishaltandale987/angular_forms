@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../service/crud.service';
 import { Task } from '../model/task';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -13,13 +13,10 @@ export class FormComponent {
   p: number = 1;
   taskArr: Task[] = [];
 
-  inProgressTasks: Task[] = [];
-  doneTasks: Task[] = [];
-  inQaTasks: Task[] = [];
-  todoTasks: Task[] = [];
+  
   
   addTaskValue: string = '';
-  selectedValue: any;
+  selectedValue: any = '';
 
 
   
@@ -34,20 +31,14 @@ export class FormComponent {
     this.getdata();
 
 
-  this.filterTasksByStatus();
   }
 
 
-  filterTasksByStatus(): void {
-    this.inProgressTasks = this.taskArr.filter(task => task.important === "IN PROGRESS");
-    this.doneTasks = this.taskArr.filter(task => task.important === "DONE");
-    this.inQaTasks = this.taskArr.filter(task => task.important === "IN QA");
-    this.todoTasks = this.taskArr.filter(task => task.important === "TODO");
-  }
+
 
   editfromdata = new FormGroup({
-    task: new FormControl(''),
-    description: new FormControl(''),
+    task: new FormControl('',[Validators.required, Validators.minLength(3) ]),
+    description: new FormControl('',[Validators.required, Validators.minLength(3) ]),
   });
 
   edits() {
@@ -87,12 +78,19 @@ export class FormComponent {
         alert('Error');
       }
     );
+    window.location.reload();
   }
 
   edittForm(item: any) {
     this.crudService.editTask(item).subscribe(
       (res) => {
         this.ngOnInit();
+
+       this.editfromdata = new FormGroup({
+          task: new FormControl(''),
+          description: new FormControl(''),
+        });
+
         alert(res);
       },
       (err) => {
@@ -105,7 +103,6 @@ export class FormComponent {
     this.crudService.getTask().subscribe(
       (res) => {
         this.taskArr = res;
-        this.filterTasksByStatus();
       },
       (err) => {
         alert('get error');
@@ -126,11 +123,5 @@ export class FormComponent {
   }
 
 
-  add(){
-    // this.ngOnInit()
- 
 
-    console.log(this.inProgressTasks)
-    // console.log(this.taskArr)
-  }
 }

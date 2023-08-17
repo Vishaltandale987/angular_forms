@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Task } from 'src/app/model/task';
 import { CrudService } from 'src/app/service/crud.service';
 
@@ -21,8 +21,7 @@ export class TodoComponent {
   todoTasks: Task[] = [];
   
   addTaskValue: string = '';
-  selectedValue: any;
-
+  selectedValue: any = "";
 
   
 
@@ -48,8 +47,8 @@ export class TodoComponent {
   }
 
   editfromdata = new FormGroup({
-    task: new FormControl(''),
-    description: new FormControl(''),
+    task: new FormControl('',[Validators.required,  ]),
+    description: new FormControl('',[Validators.required, ]),
   });
 
   edits() {
@@ -77,24 +76,15 @@ export class TodoComponent {
     );
   }
 
-  submitForm(item: any) {
-    let postdata = { ...item, important: 'TODO', userID: '123' };
-
-    this.crudService.addTask(postdata).subscribe(
-      (res) => {
-        this.ngOnInit();
-        alert(res);
-      },
-      (err) => {
-        alert('Error');
-      }
-    );
-  }
 
   edittForm(item: any) {
     this.crudService.editTask(item).subscribe(
       (res) => {
         this.ngOnInit();
+        this.editfromdata = new FormGroup({
+          task: new FormControl(''),
+          description: new FormControl(''),
+        });
         alert(res);
       },
       (err) => {
@@ -128,11 +118,4 @@ export class TodoComponent {
   }
 
 
-  add(){
-    // this.ngOnInit()
- 
-
-    console.log(this.inProgressTasks)
-    // console.log(this.taskArr)
-  }
 }

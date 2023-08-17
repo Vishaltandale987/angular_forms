@@ -105,18 +105,22 @@
 .card {
     border: 2px solid rgb(113, 162, 227);
     margin: auto;
-    border-radius: 5px;
+    border-radius: 25px;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
     text-align: left;
     width: 90%;
     padding: 1em;
+    background-color: rgb(250, 243, 251);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 
 .parents {
     border: 2px solid rgb(113, 162, 227);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 22%;
     border-radius: 10px;
     margin: auto;

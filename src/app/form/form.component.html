@@ -46,12 +46,13 @@
           </button>
 
           <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
+            <option value="" disabled selected>Select status</option>
             <option value="DONE">Done</option>
             <option value="IN PROGRESS">In Process</option>
             <option value="IN QA">IN QA</option>
           </select>
 
-          <button class="btn btn-primary" (click)="StatusTask(task)">Status</button>
+          <button class="btn btn-primary" [disabled]="selectedValue === ''" (click)="StatusTask(task)">Status</button>
         </div>
       </div>
     </div>
@@ -110,7 +111,8 @@
             ngModel
           />
 
-          <button class="btn btn-primary">Save changes</button>
+          <button class="btn btn-primary" 
+        data-bs-dismiss="modal">Save changes</button>
           <div class="modal-footer"></div>
         </form>
       </div>
