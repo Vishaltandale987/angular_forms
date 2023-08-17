@@ -8,18 +8,18 @@
       <div class="card" *ngFor="let task of todoTasks" >
 
         <div class="deletes">
-            <button (click)="deleteTask(task)" class="btn btn-danger">
-                delete
-              </button>
-              <button
-                class="btn btn-primary"
-                (click)="editsTask(task)"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-               
-              >
-                Edit
-              </button>
+          <span (click)="deleteTask(task)"  >
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
+                        
+                      </span>
+                      <span
+                      (click)="editsTask(task)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                     
+                    >
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
+                  </span>
         </div>
         <p><span class="text_heading">Task: </span> {{ task.task }}</p>
         <p>
@@ -55,18 +55,18 @@
       <div class="card" *ngFor="let task of inProgressTasks" >
     
         <div class="deletes">
-            <button (click)="deleteTask(task)" class="btn btn-danger">
-                delete
-              </button>
-              <button
-                class="btn btn-primary"
-                (click)="editsTask(task)"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-               
-              >
-                Edit
-              </button>
+          <span (click)="deleteTask(task)"  >
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
+                        
+                      </span>
+                      <span
+                      (click)="editsTask(task)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                     
+                    >
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
+                  </span>
         </div>
   
         <p><span class="text_heading">Task: </span> {{ task.task }}</p>
@@ -103,18 +103,18 @@
       <div class="card" *ngFor="let task of inQaTasks" >
 
         <div class="deletes">
-            <button (click)="deleteTask(task)" class="btn btn-danger">
-                delete
-              </button>
-              <button
-                class="btn btn-primary"
-                (click)="editsTask(task)"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-               
-              >
-                Edit
-              </button>
+          <span (click)="deleteTask(task)"  >
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
+                        
+                      </span>
+                      <span
+                      (click)="editsTask(task)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                     
+                    >
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
+                  </span>
         </div>
         <p><span class="text_heading">Task: </span> {{ task.task }}</p>
         <p>
@@ -148,18 +148,18 @@
       
       <div class="card" *ngFor="let task of doneTasks" >
         <div class="deletes">
-            <button (click)="deleteTask(task)" class="btn btn-danger">
-                delete
-              </button>
-              <button
-                class="btn btn-primary"
+          <span (click)="deleteTask(task)"  >
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
+                        
+                      </span>
+              <span
                 (click)="editsTask(task)"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                
               >
-                Edit
-              </button>
+              <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
+            </span>
         </div>
         <p><span class="text_heading">Task: </span> {{ task.task }}</p>
         <p>

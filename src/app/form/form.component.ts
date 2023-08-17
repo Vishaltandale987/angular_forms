@@ -72,13 +72,13 @@ export class FormComponent {
     this.crudService.addTask(postdata).subscribe(
       (res) => {
         this.ngOnInit();
+        window.location.reload();
         alert(res);
       },
       (err) => {
         alert('Error');
       }
     );
-    window.location.reload();
   }
 
   edittForm(item: any) {

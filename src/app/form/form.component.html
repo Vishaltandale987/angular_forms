@@ -1,3 +1,5 @@
+
+
 <div id="parent">
   <h1>Create todo</h1>
   <form #form="ngForm" id="form" (ngSubmit)="submitForm(form.value)">
@@ -33,17 +35,7 @@
         <p><span class="text_heading">Status: </span> {{ task.important }}</p>
 
         <div class="button">
-          <button (click)="deleteTask(task)" class="btn btn-danger">
-            delete
-          </button>
-          <button
-            class="btn btn-primary"
-            (click)="editsTask(task)"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Edit
-          </button>
+
 
           <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
             <option value="" disabled selected>Select status</option>
@@ -53,6 +45,19 @@
           </select>
 
           <button class="btn btn-primary" [disabled]="selectedValue === ''" (click)="StatusTask(task)">Status</button>
+
+          <span (click)="deleteTask(task)"  >
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
+                        
+                      </span>
+                      <span
+                      (click)="editsTask(task)"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                     
+                    >
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
+                  </span>
         </div>
       </div>
     </div>
