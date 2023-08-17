@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { leave } from 'src/app/model/leave';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-leave-form',
@@ -10,6 +11,7 @@ import { DatePipe } from '@angular/common';
 })
 export class LeaveFormComponent {
 
+  constructor(private toastr: ToastrService) {}
 
   leave_Arr: leave[] = [];
 
@@ -39,6 +41,7 @@ export class LeaveFormComponent {
 
   leave_submit_Form() {  
 
+    
     let leave_data_object = this.leave_validation_form.value;
 
     const startDateStr = leave_data_object.start_date;
@@ -80,8 +83,8 @@ export class LeaveFormComponent {
 
     })
     
+    this.toastr.success("Leave application has been successfully submited.");
 
-    alert("Leave application has been successfully submited.")
 
   }
 

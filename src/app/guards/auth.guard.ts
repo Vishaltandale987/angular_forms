@@ -14,5 +14,4 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   
   return  check_auth();
-  alert("Please login frist.")
 };

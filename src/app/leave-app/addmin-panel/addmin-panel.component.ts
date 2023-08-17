@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { leave } from 'src/app/model/leave';
 
 @Component({
@@ -7,6 +8,7 @@ import { leave } from 'src/app/model/leave';
   styleUrls: ['./addmin-panel.component.css']
 })
 export class AddminPanelComponent {
+  constructor(private toastr: ToastrService) {}
 
   leave_Arr: leave[] = [];
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CrudService } from '../service/crud.service';
 import { Task } from '../model/task';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -21,7 +22,7 @@ export class FormComponent {
 
   
 
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService, private toastr: ToastrService) {}
 
 
 
@@ -76,10 +77,11 @@ export class FormComponent {
     let postdata = { ...item, important: 'TODO', userID: '123' };
 
     this.crudService.addTask(postdata).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
         window.location.reload();
-        alert(res);
+        // alert(res);
+        this.toastr.success(res);
       },
       (err) => {
         alert('Error');
@@ -89,7 +91,7 @@ export class FormComponent {
 
   edittForm(item: any) {
     this.crudService.editTask(item).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
 
        this.editfromdata = new FormGroup({
@@ -97,7 +99,7 @@ export class FormComponent {
           description: new FormControl(''),
         });
 
-        alert(res);
+        this.toastr.success(res);
      
 
       },
@@ -120,9 +122,9 @@ export class FormComponent {
 
   deleteTask(etask: Task) {
     this.crudService.deleteTask(etask).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
-        alert(res);
+        this.toastr.success(res);
       },
       (err) => {
         alert('delete error');

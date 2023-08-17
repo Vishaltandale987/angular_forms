@@ -10,6 +10,7 @@ import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 import { NotfoundComponent } from './navbar/notfound/notfound.component';
 import { TodoComponent } from './form/todo/todo.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo:"/home", pathMatch:"full" },
   { path: 'home',  component: FormComponent },
@@ -21,8 +22,6 @@ const routes: Routes = [
   { path: 'sign-in',  component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '**', component: NotfoundComponent },
-
-  
 ];
 
 @NgModule({

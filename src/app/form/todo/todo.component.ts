@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Task } from 'src/app/model/task';
 import { CrudService } from 'src/app/service/crud.service';
 
@@ -25,7 +26,7 @@ export class TodoComponent {
 
   
 
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService,private toastr: ToastrService) {}
 
 
 
@@ -66,9 +67,9 @@ export class TodoComponent {
   
     localStorage.setItem('status_id', task._id);
     this.crudService.updatestatusTask(this.selectedValue).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
-        alert(res);
+        this.toastr.success(res);
         this.selectedValue = ""
 
       },
@@ -84,13 +85,13 @@ export class TodoComponent {
 
   edittForm(item: any) {
     this.crudService.editTask(item).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
         this.editfromdata = new FormGroup({
           task: new FormControl(''),
           description: new FormControl(''),
         });
-        alert(res);
+        this.toastr.success(res);
       },
       (err) => {
         alert('edit error');
@@ -112,9 +113,9 @@ export class TodoComponent {
 
   deleteTask(etask: Task) {
     this.crudService.deleteTask(etask).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
-        alert(res);
+        this.toastr.success(res);
       },
       (err) => {
         alert('delete error');
