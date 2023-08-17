@@ -66,6 +66,10 @@ export class FormComponent {
         alert('Error');
       }
     );
+
+    this.selectedValue = "";
+
+    
   }
 
   submitForm(item: any) {

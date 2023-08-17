@@ -76,6 +76,9 @@ export class TodoComponent {
         alert('Error');
       }
     );
+
+    this.selectedValue = "";
+
   }
 
 
