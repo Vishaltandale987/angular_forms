@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  constructor(private router: Router) { }
 
   
   user_name: string = "";
@@ -34,5 +36,12 @@ export class NavbarComponent {
     sessionStorage.removeItem("auth")
 
     console.log(this.auth())
+  }
+
+  pop_handle(){
+    if(this.auth() === false){
+      alert("Please Login frist")
+      this.router.navigate(['sign-in'])
+    }
   }
 }
