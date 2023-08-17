@@ -8,7 +8,7 @@
     <button class="btn btn-outline-success">Submit</button>
   </form>
 
-  <div class="box">
+  <div class="box" *ngIf="taskArr.length; else loading" >
     <h1>All task</h1>
     <div id="black_parent">
       <div *ngFor="let task of taskArr | paginate:{itemsPerPage:6,currentPage:p}" id="block">
@@ -17,10 +17,10 @@
           <span class="text_heading">Description: </span> {{ task.description }}
         </p>
 
-        <p><span class="text_heading">Status: </span> {{ task.important }}</p>
+      <p><span class="text_heading">Status: </span> <span class="status">  {{ task.important }} </span></p>
+        
 
         <div class="button">
-
 
           <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select"
             aria-label="Default select example">
@@ -30,7 +30,7 @@
             <option value="IN QA">IN QA</option>
           </select>
 
-          <button class="btn btn-primary" [disabled]="selectedValue === ''" (click)="StatusTask(task)">Status</button>
+          <button class="btn btn-primary" [disabled]="selectedValue === ''" (click)="StatusTask(task)">Change</button>
 
           <span (click)="deleteTask(task)">
             <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png"
@@ -77,3 +77,13 @@
     </div>
   </div>
 </div>
+
+
+<ng-template #loading>
+  <div class="loading">
+    <h4>
+
+      Loading...
+    </h4>
+  </div>
+</ng-template>

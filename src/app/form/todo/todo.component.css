@@ -144,3 +144,18 @@ h1{
     text-align: center;
     padding: .5em;
 }
+
+.status{
+    border: 2px solid rgb(113, 162, 227);
+    padding: .3em;
+    font-weight: bold;
+    color: rgb(227, 198, 113);
+    margin-left: .4em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.loading{
+    text-align: center;
+    margin-top: 10em;
+}

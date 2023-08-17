@@ -111,6 +111,17 @@ padding: 2em;
     border: 1px solid red;
     
 }
-.imga{
-width: 10em;
+
+
+.status{
+    border: 2px solid rgb(113, 162, 227);
+    padding: .3em;
+    font-weight: bold;
+    color: rgb(227, 198, 113);
+    margin-left: .4em;
+}
+
+.loading{
+    text-align: center;
+    margin-top: 10em;
 }

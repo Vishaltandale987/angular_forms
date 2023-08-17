@@ -1,244 +1,208 @@
-
 <h1>TODO App</h1>
-<div id="rendering_box">
-    
-    <div class="parents">
-      <h5>Open Task {{todoTasks.length}}</h5>
-      
-      <div class="card" *ngFor="let task of todoTasks" >
+<div id="rendering_box" *ngIf="taskArr.length; else loading" >
 
-        <div class="deletes">
-          <span (click)="deleteTask(task)"  >
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
-                        
-                      </span>
-                      <span
-                      (click)="editsTask(task)"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                     
-                    >
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
-                  </span>
-        </div>
-        <p><span class="text_heading">Task: </span> {{ task.task }}</p>
-        <p>
-          <span class="text_heading">Description: </span> {{ task.description }}
-        </p>
-  
-        <p><span class="text_heading">Status: </span> {{ task.important }}</p>
-  
-          <div class="button">
-            
-       
-  
-            <select name="singleSelect"  [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Select status</option>
-                <option value="DONE">Done</option>
-              <option value="IN PROGRESS">In Process</option>
-              <option value="IN QA">IN QA</option>
-            </select>
-  
-            <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Status</button>
+  <div class="parents">
+    <h5>Open Task {{todoTasks.length}}</h5>
 
-       
+    <div class="card" *ngFor="let task of todoTasks">
+
+      <div class="deletes">
+        <span (click)="deleteTask(task)">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash" />
+
+        </span>
+        <span (click)="editsTask(task)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new" />
+        </span>
       </div>
-        
-        
-      </div>
-    </div>
-  
-  
-    <div class="parents">
-      <h5>In Progress Task {{inProgressTasks.length}}</h5>
-      
-      <div class="card" *ngFor="let task of inProgressTasks" >
-    
-        <div class="deletes">
-          <span (click)="deleteTask(task)"  >
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
-                        
-                      </span>
-                      <span
-                      (click)="editsTask(task)"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                     
-                    >
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
-                  </span>
-        </div>
-  
-        <p><span class="text_heading">Task: </span> {{ task.task }}</p>
-        <p>
-          <span class="text_heading">Description: </span> {{ task.description }}
-        </p>
-  
-        <p><span class="text_heading">Status: </span> {{ task.important }}</p>
-  
-          <div class="button">
+      <p><span class="text_heading">Task: </span> {{ task.task }}</p>
+      <p>
+        <span class="text_heading">Description: </span> {{ task.description }}
+      </p>
 
-        
-  
-            <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Select status</option>
-                <option value="DONE">Done</option>
-              <option value="IN PROGRESS">In Process</option>
-              <option value="IN QA">IN QA</option>
-            </select>
-  
-            <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Status</button>
+      <p><span class="text_heading">Status: </span><span class="status">  {{ task.important }} </span></p>
+
+      <div class="button">
 
 
-                
-            
-      </div>
-        
-      </div>
-    </div>
-  
-    <div class="parents">
-      <h5>QA Task {{inQaTasks.length}}</h5>
-      
-      <div class="card" *ngFor="let task of inQaTasks" >
 
-        <div class="deletes">
-          <span (click)="deleteTask(task)"  >
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
-                        
-                      </span>
-                      <span
-                      (click)="editsTask(task)"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                     
-                    >
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
-                  </span>
-        </div>
-        <p><span class="text_heading">Task: </span> {{ task.task }}</p>
-        <p>
-          <span class="text_heading">Description: </span> {{ task.description }}
-        </p>
-  
-        <p><span class="text_heading">Status: </span> {{ task.important }}</p>
-  
-          <div class="button">
+        <select name="singleSelect" [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
+          <option value="" disabled selected>Select status</option>
+          <option value="DONE">Done</option>
+          <option value="IN PROGRESS">In Process</option>
+          <option value="IN QA">IN QA</option>
+        </select>
 
-
-     
-  
-            <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Select status</option>
-                <option value="DONE">Done</option>
-              <option value="IN PROGRESS">In Process</option>
-              <option value="IN QA">IN QA</option>
-            </select>
-  
-            <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Status</button>
+        <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Change</button>
 
 
       </div>
-        
-      </div>
-    </div>
-  
-    <div class="parents">
-      <h5>Complected Task {{doneTasks.length}}</h5>
-      
-      <div class="card" *ngFor="let task of doneTasks" >
-        <div class="deletes">
-          <span (click)="deleteTask(task)"  >
-            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash"/>
-                        
-                      </span>
-              <span
-                (click)="editsTask(task)"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-               
-              >
-              <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new"/> 
-            </span>
-        </div>
-        <p><span class="text_heading">Task: </span> {{ task.task }}</p>
-        <p>
-          <span class="text_heading">Description: </span> {{ task.description }}
-        </p>
-  
-        <p><span class="text_heading">Status: </span> {{ task.important }}</p>
-  
-          <div class="button">
-
-      
-  
-            <select  name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select" aria-label="Default select example">
-                <option value="" disabled selected>Select status</option>
-              <option value="DONE">Done</option>
-              <option value="IN PROGRESS">In Process</option>
-              <option value="IN QA">IN QA</option>
-            </select>
-  
-            <button  class="btn btn-primary"  (click)="StatusTask(task)" [disabled]="selectedValue === ''">Status</button>
 
 
-      </div>
-        
-      </div>
-    </div>
-    
-  </div>
-
-
-<div
-class="modal fade"
-id="exampleModal"
-tabindex="-1"
-aria-labelledby="exampleModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Form</h1>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <form
-        #editform="ngForm"
-        (ngSubmit)="edittForm(editform.value)"
-        class="modal-body"
-      >
-        <input
-          type="text"
-          placeholder="Enter task"
-          name="task"
-          class="form-control"
-          id="floatingInput"
-          ngModel
-        />
-        <input
-          type="text"
-          placeholder="Enter description"
-          name="description"
-          class="form-control"
-          id="floatingInput"
-          ngModel
-        />
-
-        <button class="btn btn-primary" 
-        data-bs-dismiss="modal">Save changes</button>
-        <div class="modal-footer"></div>
-      </form>
     </div>
   </div>
-</div>
+
+
+  <div class="parents">
+    <h5>In Progress Task {{inProgressTasks.length}}</h5>
+
+    <div class="card" *ngFor="let task of inProgressTasks">
+
+      <div class="deletes">
+        <span (click)="deleteTask(task)">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash" />
+
+        </span>
+        <span (click)="editsTask(task)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new" />
+        </span>
+      </div>
+
+      <p><span class="text_heading">Task: </span> {{ task.task }}</p>
+      <p>
+        <span class="text_heading">Description: </span> {{ task.description }}
+      </p>
+
+      <p><span class="text_heading">Status: </span> <span class="status">  {{ task.important }} </span></p>
+      
+
+      <div class="button">
+
+
+
+        <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select"
+          aria-label="Default select example">
+          <option value="" disabled selected>Select status</option>
+          <option value="DONE">Done</option>
+          <option value="IN PROGRESS">In Process</option>
+          <option value="IN QA">IN QA</option>
+        </select>
+
+        <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Change</button>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parents">
+    <h5>QA Task {{inQaTasks.length}}</h5>
+
+    <div class="card" *ngFor="let task of inQaTasks">
+
+      <div class="deletes">
+        <span (click)="deleteTask(task)">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash" />
+
+        </span>
+        <span (click)="editsTask(task)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new" />
+        </span>
+      </div>
+      <p><span class="text_heading">Task: </span> {{ task.task }}</p>
+      <p>
+        <span class="text_heading">Description: </span> {{ task.description }}
+      </p>
+
+      <p><span class="text_heading">Status: </span> <span class="status">  {{ task.important }} </span></p>
+
+
+      <div class="button">
+
+
+
+
+        <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select"
+          aria-label="Default select example">
+          <option value="" disabled selected>Select status</option>
+          <option value="DONE">Done</option>
+          <option value="IN PROGRESS">In Process</option>
+          <option value="IN QA">IN QA</option>
+        </select>
+
+        <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Change</button>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parents">
+    <h5>Complected Task {{doneTasks.length}}</h5>
+
+    <div class="card" *ngFor="let task of doneTasks">
+      <div class="deletes">
+        <span (click)="deleteTask(task)">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/filled-trash.png" alt="filled-trash" />
+
+        </span>
+        <span (click)="editsTask(task)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/create-new.png" alt="create-new" />
+        </span>
+      </div>
+      <p><span class="text_heading">Task: </span> {{ task.task }}</p>
+      <p>
+        <span class="text_heading">Description: </span> {{ task.description }}
+      </p>
+
+      <p><span class="text_heading">Status: </span> <span class="status">  {{ task.important }} </span></p>
+
+
+      <div class="button">
+
+
+
+        <select name="singleSelect" id="" [(ngModel)]="selectedValue" class="form-select"
+          aria-label="Default select example">
+          <option value="" disabled selected>Select status</option>
+          <option value="DONE">Done</option>
+          <option value="IN PROGRESS">In Process</option>
+          <option value="IN QA">IN QA</option>
+        </select>
+
+        <button class="btn btn-primary" (click)="StatusTask(task)" [disabled]="selectedValue === ''">Change</button>
+
+
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Form</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #editform="ngForm" (ngSubmit)="edittForm(editform.value)" class="modal-body">
+          <input type="text" placeholder="Enter task" name="task" class="form-control" id="floatingInput" ngModel />
+          <input type="text" placeholder="Enter description" name="description" class="form-control" id="floatingInput"
+            ngModel />
 
+          <button class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          <div class="modal-footer"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #loading>
+  <div class="loading">
+    <h4>
+
+      Loading...
+    </h4>
+  </div>
+</ng-template>
