@@ -41,7 +41,6 @@ export class NavbarComponent {
 
   pop_handle(){
     if(this.auth() === false){
-      alert("Please Login frist")
       this.toastr.success('Please Login frist');
 
       this.router.navigate(['sign-in'])
