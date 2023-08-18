@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { check_password } from '../validators/validators';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-new-form',
@@ -8,6 +9,7 @@ import { check_password } from '../validators/validators';
   styleUrls: ['./new-form.component.css']
 })
 export class NewFormComponent {
+  constructor(private toastr: ToastrService) { }
 
 
   validation_form = new FormGroup({
@@ -24,6 +26,8 @@ export class NewFormComponent {
 
   handle_form(){
     console.log(this.validation_form.value)
+    this.toastr.success('Form submit.');
+
   }
 
   submit_new_Form(item: any){

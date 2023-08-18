@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router,private toastr: ToastrService) { }
 
   
   user_name: string = "";
@@ -41,6 +42,8 @@ export class NavbarComponent {
   pop_handle(){
     if(this.auth() === false){
       alert("Please Login frist")
+      this.toastr.success('Please Login frist');
+
       this.router.navigate(['sign-in'])
     }
   }

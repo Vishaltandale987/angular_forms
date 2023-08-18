@@ -57,9 +57,10 @@ export class FormComponent {
   
     localStorage.setItem('status_id', task._id);
     this.crudService.updatestatusTask(this.selectedValue).subscribe(
-      (res) => {
+      (res:any) => {
         this.ngOnInit();
-        alert(res);
+        this.toastr.success(res);
+
         this.selectedValue = ""
         // this.ngOnInit();
       },

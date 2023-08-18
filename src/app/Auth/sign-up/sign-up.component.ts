@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { signUp_check_password } from 'src/app/validators/validators';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class SignUpComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private toastr: ToastrService) {}
 
 
   signup_validation_form = new FormGroup({
@@ -59,7 +60,9 @@ export class SignUpComponent {
 
     
 
-    alert(`${signup_data_object.frist_name} ${signup_data_object.last_name} has been Successfully Singup`)
+    
+    this.toastr.success(`${signup_data_object.frist_name} ${signup_data_object.last_name} has been Successfully Singup`);
+
 
 
     this. signup_validation_form = new FormGroup({

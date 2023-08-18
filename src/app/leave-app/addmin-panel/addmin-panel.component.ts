@@ -45,6 +45,7 @@ export class AddminPanelComponent {
         console.log(data)
         sessionStorage.setItem('key', JSON.stringify(data));
         this.ngOnInit()
+        this.toastr.success('Status change to approve.');
         
        
       }
@@ -66,7 +67,8 @@ export class AddminPanelComponent {
         console.log(data)
         sessionStorage.setItem('key', JSON.stringify(data));
         this.ngOnInit()
-        
+        this.toastr.success('Status change to reject.');
+
        
       }
     }
@@ -88,6 +90,7 @@ export class AddminPanelComponent {
         sessionStorage.setItem('key', JSON.stringify(data));
         this.ngOnInit()
         
+        this.toastr.success('Status change to pending.');
        
       }
     }

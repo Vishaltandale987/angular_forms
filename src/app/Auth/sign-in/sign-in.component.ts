@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private toastr: ToastrService) {}
 
   signin_validation_form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -29,7 +30,9 @@ export class SignInComponent {
 
           if(  signupDataArray[i].email !== signin_data.email &&
             signupDataArray[i].confirmation_password !== signin_data.password){
-            alert('Please signup frist');
+            
+        this.toastr.success('Please signup frist');
+
             this.router.navigate(['sign-up']);
           }
          else if (
@@ -37,7 +40,9 @@ export class SignInComponent {
             signupDataArray[i].confirmation_password === signin_data.password
           ) {
             auth = true;
-            alert('Successfully Signin');
+            
+        this.toastr.success('Successfully Signin');
+
             const existingData = true;
             sessionStorage.setItem('auth', JSON.stringify(existingData));
             sessionStorage.setItem('user_name', JSON.stringify(signupDataArray[i].frist_name));
@@ -45,13 +50,15 @@ export class SignInComponent {
             this.router.navigate(['']);
             break; 
           } else if (signupDataArray[i].email !== signin_data.email) {
-            alert('Wrong Email');
+            
+            this.toastr.success('Wrong Email');
 
             break;
           } else if (
             signupDataArray[i].confirmation_password !== signin_data.password
           ) {
-            alert('Wrong Password');
+            
+            this.toastr.success('Wrong Password');
 
             break;
           }
@@ -60,7 +67,9 @@ export class SignInComponent {
         console.error('Error parsing sign_up_array JSON:', error);
       }
     } else {
-      alert('Please signup frist');
+      
+      this.toastr.success('Please signup frist');
+
       this.router.navigate(['sign-up']);
 
     }
